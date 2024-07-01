@@ -20,8 +20,8 @@ jobs:
     environment:
       MYSQL_DATABASE: newdb
       MYSQL_USER: adminuser
-      MYSQL_PASSWORD: /run/secrets/password_file
-      MYSQL_ROOT_PASSWORD: /run/secrets/root_password_file
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: admin
  steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
