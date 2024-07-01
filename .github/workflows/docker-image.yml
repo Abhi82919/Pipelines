@@ -14,8 +14,8 @@ jobs:
 
   services: 
   mysql:
-   image: mysql:latest
-    ports:
+  image: mysql:latest
+  ports:
       - 3306:3306
     environment:
       MYSQL_DATABASE: newdb
