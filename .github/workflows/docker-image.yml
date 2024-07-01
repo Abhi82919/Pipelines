@@ -12,9 +12,20 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    
+  services: 
+  mysql:
+  image: mysql:latest
+  
+  env:
+  
+   MYSQL_ROOT_PASSWORD: password
+   MYSQL_DATABASE: test
+   MYSQL_USER: admin
+   MYSQL_PASSWORD: admin
 
-    steps:
+ ports: 
+   -3306:3306 
+ steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker-compose up -d 
