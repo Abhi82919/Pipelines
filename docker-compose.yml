@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: testuser1
+      WORDPRESS_DB_PASSWORD: /run/secrets/my_password_file
+      WORDPRESS_DB_NAME: dbfortest
+    secrets:
+      - my_password_file
+    volumes:
+      - wordpress:/var/www/html
+
+  db:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: newdb
+      MYSQL_USER: adminuser
+      MYSQL_PASSWORD: /run/secrets/password_file
+      MYSQL_ROOT_PASSWORD: /run/secrets/root_password_file
+    secrets:
+      - password_file
+      - root_password_file
+    volumes:
+      - db:/var/lib/mysql
+secrets:
+  my_password_file:
+    file: my_password_file.txt
+  password_file:
+    file: password_file.txt
+  root_password_file:
+    file: root_password_file.txt
+volumes:
+  wordpress:
+  db:
