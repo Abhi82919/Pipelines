@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Building Docker Images for Wordpress and MYSQL
 
 on:
   push:
