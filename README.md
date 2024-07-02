@@ -14,3 +14,4 @@ Step 3:
   a) After commiting the changes it will start automatically building the docker images by checking all the syntax and required permissions 
 
   
+![Screenshot 2024-07-02 135843](https://github.com/Abhi82919/Pipelines/assets/160609775/fbce537a-45db-4f92-89df-02e5ac31c5b5)
