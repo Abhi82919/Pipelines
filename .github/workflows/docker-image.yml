@@ -19,3 +19,12 @@ jobs:
       run:
          
           docker build -t mywordpress:latest -f Dockerfile.wordpress .
+
+    - name: Build MySQL Docker image
+
+      run: 
+
+           docker build -t mymysql:latest -f Dockerfile.mysql.          
+    
+
+          
