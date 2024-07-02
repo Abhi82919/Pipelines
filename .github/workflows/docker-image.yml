@@ -24,7 +24,7 @@ jobs:
 
       run: 
 
-           docker buildx build  -t mydockerhubusername/mywordpress:latest -f Dockerfile.mysql .        
+           docker buildx build  -t mymysql:latest -f Dockerfile.mysql .        
     
 
           
