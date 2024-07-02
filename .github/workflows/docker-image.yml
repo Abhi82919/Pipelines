@@ -17,14 +17,14 @@ jobs:
     - name: Build WordPress Docker image
     
       run:
-         
-          docker build -t mywordpress:latest -f Dockerfile.wordpress .
 
+         docker buildx build --platform linux/amd64,linux/arm64 -t mywordpress:latest -f Dockerfile.wordpress .
+          
     - name: Build MySQL Docker image
 
       run: 
 
-           docker build -t mymysql:latest -f Dockerfile.mysql.          
+           docker buildx build --platform linux/amd64,linux/arm64 -t mydockerhubusername/mywordpress:latest -f Dockerfile.mysql .        
     
 
           
